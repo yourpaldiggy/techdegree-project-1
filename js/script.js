@@ -88,17 +88,16 @@ function getRandomQuote(arr) {
 	return quote; // Returns the quote variable which picks a quote at random
 }
 // This automatically refreshes the quote at a set interval of 5 seconds / learned from https://www.w3schools.com/jsref/met_win_setinterval.asp
-let interval = setInterval(printQuote, 5000);
+const interval = setInterval(printQuote, 10000);
 // This automatically refreshes the background color as the quotes refresh
-let colors = setInterval(rgb, 5000);
+const colors = setInterval(rgb, 10000);
 // Generates the random RGB values and adds them to the background color. For use with the colors interval
-function rgb(r, g, b) {
-	r = Math.floor(Math.random() * 255);
-	g = Math.floor(Math.random() * 255);
-	b = Math.floor(Math.random() * 255);
-	let bgColor = `rgb(${r}, ${g}, ${b})`;
+function rgb() {
+	let r = () => Math.floor(Math.random() * 255);
+	let bgColor = `rgb(${r()}, ${r()}, ${r()})`;
 	document.body.style.background = bgColor;
 }
+
 // My printQuote function has extra properties for 'album' and 'developer' based on music, or video game quote.
 function printQuote() {
 	let quote = getRandomQuote(quotes);
@@ -116,6 +115,7 @@ function printQuote() {
 		display += `<span class="album">, ${quote.album}</span>`;
 	}
 	display += `</p>`;
+	rgb();
 	document.getElementById('quote-box').innerHTML = display;
 }
 /***
