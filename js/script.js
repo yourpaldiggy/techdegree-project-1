@@ -82,21 +82,20 @@ project 1 - A Random Quote Generator
 /***
  * `getRandomQuote` function
  ***/
-function getRandomQuote(arr) {
+function getRandomQuote() {
 	let random = Math.floor(Math.random() * quotes.length);
 	let quote = quotes[random];
 	return quote; // Returns the quote variable which picks a quote at random
 }
 // This automatically refreshes the quote at a set interval of 10 seconds / learned from https://www.w3schools.com/jsref/met_win_setinterval.asp
-const interval = setInterval(printQuote, 10000);
-// This automatically refreshes the background color as the quotes refresh
-const colors = setInterval(rgb, 10000);
-// Generates the random RGB values and adds them to the background color. For use with the colors interval
+let interval = setInterval(printQuote, 10000);
+// Generates the random RGB values and adds them to the background color. For use inside printQuote()
 function rgb() {
 	let r = () => Math.floor(Math.random() * 255);
 	let bgColor = `rgb(${r()}, ${r()}, ${r()})`;
 	document.body.style.background = bgColor;
 }
+
 
 // My printQuote function has extra properties for 'album' and 'developer' based on music, or video game quote.
 function printQuote() {
@@ -115,8 +114,11 @@ function printQuote() {
 		display += `<span class="album">, ${quote.album}</span>`;
 	}
 	display += `</p>`;
+	
 	rgb();
-	document.getElementById('quote-box').innerHTML = display;
+	document.getElementById('quote-box').innerHTML =  display;
+	
+	
 }
 /***
  * click event listener for the print quote button
