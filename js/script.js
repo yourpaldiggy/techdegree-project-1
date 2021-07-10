@@ -87,7 +87,7 @@ function getRandomQuote(arr) {
 	let quote = quotes[random];
 	return quote; // Returns the quote variable which picks a quote at random
 }
-// This automatically refreshes the quote at a set interval of 5 seconds / learned from https://www.w3schools.com/jsref/met_win_setinterval.asp
+// This automatically refreshes the quote at a set interval of 10 seconds / learned from https://www.w3schools.com/jsref/met_win_setinterval.asp
 const interval = setInterval(printQuote, 10000);
 // This automatically refreshes the background color as the quotes refresh
 const colors = setInterval(rgb, 10000);
