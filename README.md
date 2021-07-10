@@ -1,6 +1,6 @@
 # Techdegree Project 1
 
-    To use my project, see: https://yourpaldiggy.github.io/techdegree-project-1/
+    To use my project, see: <a href="https://yourpaldiggy.github.io/techdegree-project-1/">Random Quote Generator</a>
  
  This is a random quote generator, that automatically shuffles through a list of quotes.
  Randomly selected from games, movies, and music.
