@@ -115,7 +115,9 @@ function printQuote() {
 	}
 	display += `</p>`;
 	
-	rgb();
+	// calls the RGB function to change the background color.
+	// used inside this function so it is changed everytime a quote is printed.
+	rgb(); 
 	document.getElementById('quote-box').innerHTML =  display;
 	
 	
